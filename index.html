@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Washington D.C. Staff Handbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+        h2 {
+            color: #333;
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="loginId" placeholder="Login ID" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="checkLogin()">Login</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+    function checkLogin() {
+        const loginId = document.getElementById('loginId').value;
+        const password = document.getElementById('password').value;
+
+        if (loginId === "Game Staff" && password === "Game Staff") {
+            window.location.href = "welcome.html"; // Redirect to welcome page
+        } else {
+            document.getElementById('error').innerText = "Invalid Login ID or Password.";
+        }
+    }
+</script>
+
+</body>
+</html>
